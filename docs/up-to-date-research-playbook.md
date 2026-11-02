@@ -39,6 +39,20 @@ agree before it is taught (`docs/research-method.md`).
 - **Snapshots carry a banner.** Any radar or brief more than 30 days
   old is a starting point, not evidence.
 
+## 2a. Semester timing
+
+Lessons are built weeks or months before they're taught, so research
+happens in three passes:
+
+| When | Pass | Prompt |
+|---|---|---|
+| Semester start | **Track radar** against all of the semester's approved plans | `prompts/topic-radar.md` |
+| Build time | **Build:** chosen radar rows → session brief + claim matrix | `prompts/research-agent.md` (build mode) |
+| **T-30 days** per session | **Refresh:** re-verify every claim, replace anything stale, rebuild, run the critic again | `prompts/research-agent.md` (refresh mode) |
+
+A radar or matrix built for one semester's plans is **leads, not
+evidence**, for the next semester.
+
 ## 3. Platform rule
 
 All required activities assume **Claude**, because every SU student
@@ -84,6 +98,6 @@ flag it in the brief.
 
 | Stage | Output |
 |---|---|
-| Topic radar | `research/[session]-radar.md` (or a track-wide snapshot such as `research/t1-topic-radar-2026-11.md`) |
-| Research | `research/[topic]-brief.md`: question, sources by type, evidence, inference (labeled), gaps |
-| Matrix | `comparisons/[topic]-matrix.md`: format in `docs/research-method.md` |
+| Track radar | `research/t[N]-topic-radar-YYYY-MM.md` (public repo), e.g. `research/t1-topic-radar-2026-11.md` |
+| Research | `research/[topic]-brief.md` (private sessions repo): question, sources by type, evidence, inference (labeled), primary source for class, gaps |
+| Matrix | `comparisons/[topic]-matrix.md` (private sessions repo): format in `docs/research-method.md` |

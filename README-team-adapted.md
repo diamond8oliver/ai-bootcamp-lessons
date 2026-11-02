@@ -59,9 +59,10 @@ No README currently exists in the team files.
 | Session 5 Materials | `t1s5` | Capstone: AI Professional Showcase | AI Professional Portfolio | R5-01 to R5-05 |
 
 The radar rows are in `research/t1-topic-radar-2026-11.md`, a dated
-snapshot that must be refreshed before teaching. Session files
-(intake, lesson, deck, artifact) stay local and are not pushed to the
-public repo; see `Guardrails.md`.
+snapshot built against this semester's plans. Re-run it against next
+semester's approved plans. Session files (intake, lesson, deck,
+artifact) live in a separate private repo and are never published
+here; see `Guardrails.md`.
 
 ## What is missing, honestly
 
@@ -77,51 +78,27 @@ public repo; see `Guardrails.md`.
 
 ## How to use this going forward
 
-For each session, in order (the full 8-stage pipeline is in
-`README.md`):
+The full pipeline lives in one place, the table in `README.md`. In
+short: intake the approved plan, research it into a dated claim
+matrix, design and build the lesson, deck, and artifact from that one
+matrix, run the critic until it says READY, prep using `CHECKLIST.md`,
+and fill in a retro after teaching. `QUICKSTART.md` is the one-page
+version for peer leaders.
 
-0. **Intake.** Record the approved plan's objectives, artifact and
-   locked items (`lessons/approved-plan-intake-template.md`).
-1. **Topic radar.** Find current AI developments that fit the
-   approved objectives, each with a failure case and a debate angle
-   (`prompts/topic-radar.md`).
-2. **Research.** Add a research brief for the topic, with 3 to 5
-   sources, dated. Do not start from a single deck or video.
-3. **Cross-compare.** Add a claim matrix: one row per claim, which
-   sources agree, which disagree, confidence level. Teach only
-   claims at least two credible sources agree on; flag conflicts
-   in the lesson instead of hiding them.
-4. **Build the lesson from the matrix.** Slides and student
-   artifacts come from the same matrix, so they never contradict
-   each other. Name the copies placed in Teams by session, for
-   example `Session 6 - [Topic] - Research Brief` and
-   `Session 6 - [Topic] - Claim Matrix`.
-5. **Teach it the Lesson Lab way.** The sourced version is in
-   `docs/creative-teaching-playbook.md`. In short:
-   - **Decide before prompting.** Students choose what to hand to
-     AI and what to keep (Anthropic AI Fluency; T-13).
-   - **Students try first and hit a real failure.** The debrief uses
-     their own attempts (productive-failure meta-analysis; T-01).
-     Re-test the failure the day before, because demos stop failing
-     as models update (T-23).
-   - **Short frames, predictions first.** One concept in under 2
-     minutes, with students committing a prediction before the
-     reveal (borrowed from strong YouTube explainers; T-19, T-20).
-   - **Debate as vote → discuss → re-vote** (peer instruction; T-03).
-   - **End with students producing and defending something,** with
-     a process log and a live "how do you know?" check (T-07). Never
-     a summary slide.
-6. **Review before teaching.** Use `CHECKLIST.md`: no bullet-wall
-   slides, one claim per slide with evidence on the slide and
-   explanation in speaker notes, demo tested before class, and every
-   lesson claim backed by the matrix.
-7. **Retro after teaching.** Use `lessons/retro-template.md` within
-   48 hours, so the next run starts from what actually happened.
+What changes in the room, with the evidence behind each move, is in
+`docs/creative-teaching-playbook.md`:
+- Students decide what to hand to AI before prompting.
+- They try first and catch a real failure.
+- They predict before every reveal.
+- The debate is vote → discuss → re-vote.
+- Every session meets a college-level rigor bar: a primary source,
+  evidence judged, a claim defended.
+- The class ends with students producing and defending something.
 
-(An earlier draft of this list described the DeepLearning.AI style as
-"code-first". That does not fit a no-coding program, and the
-"Stanford" and "YouTube" styles had no sources. They were replaced
-with the sourced moves above.)
+(An earlier draft described the DeepLearning.AI style as
+"code-first". That doesn't fit a no-coding program, and the "Stanford"
+and "YouTube" styles had no sources. Both were replaced with the
+sourced moves.)
 
 ## File conventions for new material
 
@@ -172,16 +149,19 @@ What still needs the Lesson Lab, even with that strength:
 - Slide decks are long: Session 1 is 32 slides in 50 minutes,
   with a 34-slide copy also in the folders. That pace is a
   likely cause of the slideshow problem, regardless of content.
-- Session 4, the next session, has a timing collision noted in its
-  peer leader kit at minute 44, with Activity 3 on an 11-minute
-  timer. Fix that timing before teaching it, and use Session 4 as
-  the first test of the new approach, since its materials are
-  freshest.
+- Session 4 has a timing collision noted in its peer leader kit at
+  minute 44, with Activity 3 on an 11-minute timer. This semester's
+  Session 4 is taught as-is. Fix the collision in next semester's
+  version.
 
 ## Next step for the team
 
-Agree on two things before Session 5 teaching: first, whether
-Needs Printing and Pairings and Classroom Assignments get filled
-or removed; second, who owns the research brief and claim matrix
-for the next session, so the pipeline starts with evidence, not
-with a deck.
+The redesign targets **next semester**. This semester's sessions are
+taught as they are. Before next semester, agree on three things:
+
+1. Get the pre-approved plans for next semester, so intake can start.
+2. Decide whether Needs Printing and Pairings and Classroom
+   Assignments get filled or removed.
+3. Decide who owns each session's research and claim matrix, so every
+   session starts with evidence, not with a deck. The first session
+   built becomes the team's reference example.

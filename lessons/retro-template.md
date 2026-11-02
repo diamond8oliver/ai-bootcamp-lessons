@@ -1,7 +1,7 @@
 # [slug]: retro ([date taught])
 
-> Stage 7. Fill this in within 48 hours of teaching, while it's fresh.
-> Copy it to `lessons/[slug]-retro.md`. It feeds the next topic radar
+> Stage 5. Fill this in within 48 hours of teaching, while it's fresh.
+> Copy it to `lessons/[slug]-retro.md` in the private sessions repo. It feeds the next topic radar
 > and the next lesson design. **No student names, grades, or
 > identifiable quotes.** Paraphrase, and use counts.
 
@@ -17,14 +17,11 @@
 
 | Segment | Planned (min) | Actual (min) | Why it differed |
 |---|---|---|---|
-| Recall + cold open | 4 | | |
-| Delegation decision | 2 | | |
-| Attempt → failure | 12 | | |
-| Name it + frame | 4 | | |
-| Verification attempt | 8 | | |
-| Debate | 8 | | |
-| Produce + live check | 9 | | |
-| Teach-back | 3 | | |
+| [segment names from the lesson's run sheet] | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
 
 ## Did the failure fail?
 
@@ -49,6 +46,19 @@ What students did or said (paraphrased) that shows it worked:
 
 - First vote split: ___ / ___ · Re-vote: ___ / ___
 - Did the discussion change minds? What argument moved people?
+
+## Exit ticket (if used)
+
+- Students who answered: ___
+- Caught the flaw: ___ (___%)
+- The most common wrong answer, in one line:
+
+## Rigor bar in practice
+
+- Did students actually read the primary source, or skim it? What did
+  they notice about the evidence?
+- Did any claim get defended with evidence rather than opinion?
+  (Paraphrase it.)
 
 ## Artifacts
 

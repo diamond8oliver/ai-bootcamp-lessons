@@ -23,35 +23,19 @@ science majors. The goal is judgment with AI, not tool trivia.
 
 ## Workflow, in order, no skipping steps
 
-Stage numbers match the pipeline table in `README.md`.
+The stages, timing, and files are defined **only** in the pipeline
+table in `README.md`. Short version:
 
-0. **Intake.** Fill `lessons/approved-plan-intake-template.md` from
-   the approved lesson plan. Objectives, the artifact, and badge
-   criteria are locked. Check and date the platform facts.
-1. **Topic radar.** Run `prompts/topic-radar.md` with the intake.
-   Write `research/[session]-radar.md`, then pick 1–3 rows for the
-   lesson. Copy any stale claims into the intake.
-2. **Research.** Read `docs/up-to-date-research-playbook.md` and
-   `docs/research-method.md`, then run `prompts/research-agent.md` for
-   the chosen rows. Write the research brief to `research/` and the
-   claim matrix to `comparisons/`.
-3. **Design.** Read `docs/creative-teaching-playbook.md` and run
-   `prompts/lesson-designer.md`. Write the lesson to `lessons/`.
-4. **Build.** Make the deck from `lessons/slides/template.md` and the
-   artifact from `lessons/artifacts/artifact-template.md`, both from
-   the same claim matrix. Export with `scripts/build.sh <file>` (or
-   `--all`), then open every output. Check that the .pptx has speaker
-   notes and that the .docx/.pdf have every section.
-5. **Critic.** Run `prompts/slide-critic.md` on the deck and the
-   artifact. Fix every issue the critic finds, or explicitly flag it
-   in the lesson as an open question. Then run Part A of
-   `CHECKLIST.md`.
-6. **Prep.** Work through the `CHECKLIST.md` timeline. The day
-   before, re-run every failure prompt on the students' plan and
-   capture backup screenshots. Failure demos decay.
-7. **Retro.** Within 48 hours of teaching, fill in
-   `lessons/retro-template.md`. Update the matrix rows it flags, and
-   add unanswered questions to the next radar run.
+- **Semester start:** track radar (`prompts/topic-radar.md`) against all
+  the approved plans.
+- **0 Intake** → **1 Research** (claim matrix; refresh at T-30 days) →
+  **2 Design + build** (lesson, deck, and artifact in one pass) →
+  **3 Critic** (must say READY) → **4 Prep** (`CHECKLIST.md`) →
+  **5 Retro**.
+- Session content is written to the **private** sessions repo
+  (`../AI Bootcamp Sessions`), never to this one.
+- Approved activities are **upgraded, not replaced**
+  (`docs/creative-teaching-playbook.md`).
 
 ## Quality bar
 
@@ -64,12 +48,29 @@ A lesson passes only if you can answer all of these yes:
 - What is the most up-to-date claim in the lesson, and when was
   it verified?
 
+## Rigor bar (college level, house rule H-05)
+
+Every session also clears all five:
+
+1. Students read part of at least one **primary source** (a study,
+   policy, or official document), not a summary of it.
+2. Students **judge the evidence**: sample size, who ran or funded it,
+   date, which model was tested, and descriptive vs. causal.
+3. Students make a **claim and defend it with evidence**, not opinion.
+4. At least one **genuine disagreement** between two **named,
+   verified** positions (people, studies, or institutions) is shown
+   honestly.
+5. **No button-teaching** unless it serves a judgment.
+
 ## File naming
 
 `[session]` is a track+session slug: `t1s4` = Track 1, Session 4.
 
+Track radar (public, this repo): `research/t[N]-topic-radar-YYYY-MM.md`.
+Everything below lives in the **private sessions repo**, at the same
+relative paths:
+
 - Intake: `lessons/[session]-intake.md`
-- Radar: `research/[session]-radar.md`
 - Retro: `lessons/[session]-retro.md`
 - Research: `research/[topic]-brief.md`
 - Matrix: `comparisons/[topic]-matrix.md`
@@ -79,23 +80,25 @@ A lesson passes only if you can answer all of these yes:
 
 ## Build and export
 
-- `scripts/build.sh` needs pandoc, `npx` (Node 18+), and Google
-  Chrome. It fails loudly if any are missing. Don't work around it.
-- Decks → `.pptx` + `.pdf` via Marp (pinned version in the script).
-  The .pptx slides are images with speaker notes, so all edits go in
-  the markdown.
-- Lessons and artifacts → `.docx` (pandoc) + `.pdf` (pandoc HTML →
-  headless Chrome).
-- Outputs land in `out/` (gitignored), with team-convention names
-  (`Session 4 - [Topic] - Deck.pptx`) ready for `Session N Materials`.
+- `scripts/build.sh` needs pandoc, `npx` (Node 18+), Python 3, and
+  Google Chrome. It fails loudly if any are missing. Don't work around
+  it.
+- Decks → an **editable** `.pptx` with speaker notes (via
+  `scripts/marp2pptx.py` + pandoc) and a polished `.pdf` (Marp, pinned
+  version). Edit the markdown, then rebuild.
+- Lessons → "Peer Leader Guide" `.docx` + `.pdf`. Artifacts, intake,
+  and retros → `.docx` + `.pdf`.
+- Outputs land in `out/` of the repo holding the source, with
+  team-convention names (`Session 4 - [Topic] - Deck.pptx`).
 - Copy outputs into the shared Teams folder only when asked to.
 
-## Publishing (public repo)
+## Publishing
 
-Read `Guardrails.md` before any commit. Session files (`t[N]s[N]-*`)
-are gitignored until the program lead clears publishing. Never commit
-anything from the Teams folder, people's names, rooms or schedules,
-or absolute local paths.
+Read `Guardrails.md` before any commit. This repo is **public**: it
+holds the method and public-source research only. Session content
+goes in the private sessions repo. Never commit anything from the
+Teams folder, people's names, rooms, schedules, or absolute local
+paths, in either repo.
 
 ## Tone
 

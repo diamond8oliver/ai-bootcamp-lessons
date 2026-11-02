@@ -5,15 +5,18 @@ Research briefs and topic-radar snapshots. Everything here comes from
 
 | File pattern | Stage | Made by |
 |---|---|---|
-| `[slug]-radar.md` or `t[N]-topic-radar-YYYY-MM.md` | 1: topic radar | `prompts/topic-radar.md` |
-| `[topic]-brief.md` | 2: research | `prompts/research-agent.md` |
+| `t[N]-topic-radar-YYYY-MM.md` | Track radar (semester start) | `prompts/topic-radar.md` |
+
+Session briefs (`[topic]-brief.md`, stage 1) live in the **private**
+sessions repo, next to their lessons.
 
 Rules: `docs/up-to-date-research-playbook.md`. Every brief has a
-matching claim matrix in `comparisons/`. Snapshots carry a
+matching claim matrix. Snapshots carry a
 `snapshot:` date and a "refresh before teaching" banner.
 
 Current files:
 - `teaching-methods-brief.md`: how to make AI topics teachable
   (matrix: `comparisons/teaching-methods-matrix.md`).
 - `t1-topic-radar-2026-11.md`: current AI topics for Track 1
-  sessions, November 2026 snapshot.
+  sessions, a November 2026 snapshot built against the Fall 2026
+  plans. Treat it as leads for next semester.

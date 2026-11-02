@@ -1,9 +1,11 @@
 ---
 title: "[Artifact name]: [Session title]"
-subtitle: "AI Bootcamp · Take-home artifact"
+subtitle: "AI Bootcamp · Started in class, finished at home"
 ---
 
 **Session:** [slug and title]
+
+**Built in class:** [parts] · **Finish at home:** [parts], due [date]
 
 **What this is:** something you make with AI's help **and defend**.
 It is graded on your process and your judgment, not only on the final

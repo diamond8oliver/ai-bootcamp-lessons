@@ -1,9 +1,10 @@
 # Intake: [session slug, e.g. t1s4]: [session title]
 
 > Stage 0. Fill this in from the **approved** lesson plan before any
-> research. Copy it to `lessons/[slug]-intake.md`. Session files are
-> gitignored until publishing is cleared (see `Guardrails.md`).
-> No student names, grades, or private class data.
+> research. Save it in the **private sessions repo** as
+> `lessons/[slug]-intake.md`. The plan document itself stays in that
+> repo's `plans/` (gitignored). No student names, grades, or private
+> class data.
 
 ## Session facts
 

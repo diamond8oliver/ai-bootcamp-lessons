@@ -19,23 +19,29 @@ or committing anything. This repo is **public**.
   one build script). No app code.
 - **Target user:** AI Bootcamp peer leaders (two per cohort) and
   Claude Code acting on their behalf.
-- **Version one goal:** a scaffold that works for any future approved
-  plan, plus seed research (teaching methods + a Track 1 topic radar).
+- **Current goal:** next semester's sessions are college-level and
+  intriguing, built from the program's pre-approved plans (which plans
+  is not yet known, so everything stays track-agnostic). This
+  semester's remaining sessions are taught as-is.
 - **Mode:** ALPHA. Real teaching use; light tooling; verification
   required before calling anything done.
 
 ## Scope
-- **In scope:** the pipeline docs, prompts, templates, checklist,
-  build script, and public-source research (briefs, matrices, radar
-  snapshots).
+- **In scope (this public repo):** the pipeline docs, prompts,
+  templates, checklist, build script, and public-source research that
+  applies to a whole track (teaching methods, track radars).
+- **In scope (private `ai-bootcamp-sessions` repo):** session content:
+  intake, session briefs and matrices, lessons, decks, artifacts,
+  retros.
 - **Out of scope:** student data of any kind; grading; LMS
   integration; editing the shared Teams folder (outputs are copied
   there only on explicit request).
 
 ## Stack and environment
-- Markdown (Marp for decks). `scripts/build.sh`: pandoc, `npx`
-  (pinned `@marp-team/marp-cli`), Google Chrome (headless, for .pptx
-  and .pdf).
+- Markdown (Marp syntax for decks). `scripts/build.sh`: pandoc
+  (editable .pptx via `scripts/marp2pptx.py`, plus .docx), `npx`
+  (pinned `@marp-team/marp-cli`, for the deck PDF), Python 3 (standard
+  library only), Google Chrome (headless, for the doc PDFs).
 - Research tools: Firecrawl (search/scrape, YouTube transcripts).
   Expect rate limits of about 15 fetches per agent; run research as
   parallel agents.
@@ -66,16 +72,19 @@ or committing anything. This repo is **public**.
   addresses, schedules, staff contacts, or absolute local paths. The
   unredacted team README lives only in `context/` (gitignored).
 - **Ownership.** Peer Leader is a paid SU role, so finished lessons
-  built for SU sessions may belong to SU. Session files
-  (`lessons/t[N]s[N]-*`, `lessons/slides/t[N]s[N]-*`,
-  `lessons/artifacts/t[N]s[N]-*`) are **gitignored until the program
-  lead gives a written OK**. Remove those `.gitignore` lines only
-  after that.
+  built for SU sessions may belong to SU. **Session content lives in
+  the private `ai-bootcamp-sessions` repo.** Session files
+  (`t[N]s[N]-*`) are also gitignored in this public repo as a safety
+  net. Nothing moves from private to public without the program lead's
+  written OK.
+- **Approved plan documents** stay in the private repo's `plans/`,
+  which is gitignored there too. They never go on GitHub.
 - **Before every push:** run `gitleaks detect` on the working tree and
   history, plus the grep in "Verification checklist" below.
 
 ## Prohibited actions
 - Committing anything listed under "Public-repo rules".
+- Copying anything from the private sessions repo into this one.
 - Teaching or putting on a slide any claim marked UNVERIFIED or
   PARTIAL, or not marked teachable in a matrix.
 - Treating a prior Teams version of a session as evidence. It is a
@@ -109,8 +118,9 @@ or committing anything. This repo is **public**.
 
 ## Verification checklist
 - [ ] Every path in the README layout exists.
-- [ ] `scripts/build.sh --templates` exits 0; the .pptx contains
-      `ppt/notesSlides/`, the .docx opens, and each .pdf has pages.
+- [ ] `scripts/build.sh --templates` exits 0. The .pptx has one notes
+      slide per slide, the text sits in editable runs, and no `<!--` or
+      directive text leaks. The .docx opens, and each .pdf has pages.
 - [ ] Every T-ID cited in `docs/` exists in the matrix.
 - [ ] `gitleaks detect` is clean, on the working tree and with
       `--log-opts=--all`.

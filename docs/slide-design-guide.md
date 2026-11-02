@@ -7,7 +7,10 @@ Students should spend most of the 50 minutes working, not watching.
 
 1. **One claim per slide.** If a slide makes two points, it becomes
    two slides, or one point gets cut.
-2. **The headline is a full sentence that states the claim.**
+2. **Every headline is a full sentence.** On a **claim slide** (one
+   that asserts something factual), it states the claim. On an
+   **activity slide** (an instruction, vote, or prompt), it's a
+   full-sentence question or instruction.
    - Not: "Citation accuracy"
    - Yes: "Links in AI research reports usually work. The claims
      behind them often don't."
@@ -20,12 +23,20 @@ Students should spend most of the 50 minutes working, not watching.
    backup screenshot description live.
 5. **No bullet walls.** At most 3 short lines of text on any slide.
    A slide with more needs to be split or turned into a handout.
+   **Primary-source slide:** show 1–3 quoted key sentences plus the
+   "judge it" line. The full 150–300-word excerpt goes on the printed
+   handout.
 6. **No summary slide at the end.** The last slide launches the
    production task or the teach-back.
 7. **Every live demo has a backup.** Screenshot the failure the day
-   before and reference it in the speaker notes (H-02, T-23).
-8. **Predictions before reveals.** A reveal slide follows a slide
-   where students commit an answer (T-20).
+   before and name the file in the speaker notes (H-02, T-23).
+   **Redact every screenshot**: crop out the account name, sidebar
+   chat titles, and the memory panel.
+8. **Predictions before reveals.** Every reveal, including a
+   research number, follows a moment where students commit an answer
+   (T-20).
+9. **Slide minutes match the run sheet.** Any time on a slide (in the
+   instructions or the notes) must agree with the Peer Leader Guide.
 
 ## Slide budget (house rule H-01)
 
@@ -37,17 +48,22 @@ rule until the research supports or replaces it.
 
 Typical shape:
 
-| Slide type | Count |
-|---|---|
-| Recall + cold open (prediction) | 2 |
-| Delegation decision | 1 |
-| Attempt instructions + timer | 1–2 |
-| Failure reveal + name | 1–2 |
-| Concept frame (≤ 2 min) | 1–2 |
-| Evidence slides (claim + source) | 2–4 |
-| Debate question + re-vote | 2 |
-| Production launch + criteria | 1 |
-| Teach-back prompt | 1 |
+The template (`lessons/slides/template.md`) uses 12:
+
+| # | Slide | Type | Run-sheet minutes |
+|---|---|---|---|
+| 1 | Recall | activity | 0–2 |
+| 2 | Cold open + vote | activity | 2–4 |
+| 3 | Delegation decision | activity | 4–6 |
+| 4 | Attempt | activity | 6–16 |
+| 5 | Failure named (+ backup screenshot) | claim | 16–17 |
+| 6 | Frame: why it happens | claim | 17–19 |
+| 7 | Primary source: predict + judge | activity | 19–27 |
+| 8 | Measured result (reveal) | claim | 19–27 |
+| 9 | Debate vote 1 | activity | 27–33 |
+| 10 | Re-vote | activity | 27–33 |
+| 11 | Produce + verify + live check | activity | 33–45 |
+| 12 | Teach-back + exit ticket | activity | 45–50 |
 
 ## Marp mechanics
 
@@ -85,9 +101,18 @@ images/backup-failure.png (captured 2026-11-03).
 
 ## Export behavior (know before you edit)
 
-- `.pptx` export renders each slide as an image and **keeps the
-  speaker notes**. The slide text **cannot be edited in PowerPoint**.
-  Edit the markdown and rebuild.
-- Marp has an editable-PPTX mode, but it needs LibreOffice and
-  **drops speaker notes**, so we don't use it.
-- `.pdf` export is for printing and for sharing a read-only copy.
+`scripts/build.sh` turns one Marp source into two outputs:
+
+| Output | Built by | Good for | Notes |
+|---|---|---|---|
+| `Deck.pptx` | `scripts/marp2pptx.py` + pandoc | Presenting and editing in PowerPoint | **Editable** text boxes and **real speaker notes**. Plain default layout: apply a theme in PowerPoint (Design → Themes). The `_footer` source line becomes an italic "Source:" line at the bottom of the slide. Marp-only styling (`style:`, `_class: lead`) is dropped |
+| `Deck.pdf` | Marp (pinned) | Printing, read-only sharing | Matches the Marp preview exactly. No speaker notes |
+
+- **The markdown is the source of truth.** If someone edits the .pptx in
+  PowerPoint, copy the changes back into the markdown, or they'll be
+  lost at the next build.
+- Keep slides simple enough to survive the conversion: headings,
+  short text, one table or one image. Complex Marp CSS won't carry
+  over into the .pptx.
+- An SU-styled `reference.pptx` (pandoc's `--reference-doc`) is
+  deferred until there's a branded template to copy.
