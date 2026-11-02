@@ -1,0 +1,24 @@
+# Build outputs (regenerate with scripts/build.sh)
+out/
+
+# Local-only working notes and unredacted team docs
+context/
+
+# Office/PDF files never belong in the repo outside out/
+*.pptx
+*.docx
+*.pdf
+*.xlsx
+~$*
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# SU session content stays local until the program lead clears publishing
+# (see Guardrails.md, "Ownership"). Session slugs look like t1s4, t2s1.
+# Remove these lines only after written OK.
+lessons/t[0-9]s[0-9]*
+lessons/slides/t[0-9]s[0-9]*
+lessons/artifacts/t[0-9]s[0-9]*
